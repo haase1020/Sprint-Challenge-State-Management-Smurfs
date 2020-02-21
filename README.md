@@ -22,11 +22,30 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] What problem does the context API help solve?
+- [x] What problem does the context API help solve?
+
+With Context API you don't have to pass pros down from component to component, but can instead store data on a context object, and retrieve that data in the ncessary components from the ontext object, not props.
+
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+Actions: packets of information that contain an action type and associated data. Actions allow us to keep things as simple as possible when responding to events and interactions. 
+
+Reducers: reducers calculate the new version of state based on the current state and a given Action. Reducers are pure functions and they are the "glue" that bind together the Actions and Store in Redux.
+
+Store: Everything that changes in the application. The store is a single JavaScript Object, and contains the state for the application.
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+Application state is a centralized gloabl store which is accessible to any component that subscribes to the store. Component state is stored locally within a component and is not accessible to other components unless it is passed as props to sub components. When there are many components, this can be difficult. 
+
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+Thunk is a separate node package that makes the redux flow asynchronous and makes API calls from action creators. Thunk enables us to have the actio creators perform asynchronous API calls. 
+
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+
+I don't have one. They are all a big hug pile of mush in my head right now. I would like to submit my opinion on this after a weekend of stewing on the subject. 
 
 ## Project Set Up
 
@@ -49,7 +68,7 @@ Follow these steps to set up your project:
 - [x] Plan and implement how you are going to manage your state for your application
 - [x] You _must_ use either context or Redux as your state management system
 - [ ] Once you have planned out your state management system, fetch data from the smurf server and display the data it returns
-- [ ] Add a form to collect info for a new smurf, and make a POST request to the server to add a new smurf to your village
+- [x] Add a form to collect info for a new smurf, and make a POST request to the server to add a new smurf to your village
 
 ## API documentation
 
