@@ -13,11 +13,11 @@ export const ADD_SMURF_FAILURE = ' ADD_SMURF_FAILURE';
 //async action creator
 
 export const getSmurfs = () => dispatch => {
-    dispatch ({ type: FETCH_SMURF_START });
-    axios
-        .get('http://local:host:3333/smurfs')
+    dispatch({ type: FETCH_SMURF_START });
+    axios   
+        .get('http://localhost:3333/smurfs')
         .then(res => {
-            console.log(res.data);
+            console.log('reponse is here',res);
             dispatch({ type: FETCH_SMURF_SUCCESS, payload: res.data });
         })
         .catch(error => {
@@ -27,12 +27,12 @@ export const getSmurfs = () => dispatch => {
 
 export const addSmurfs = (addSmurfData) => dispatch => {
     dispatch({ type: ADD_SMURF_START });
-    axios
+    axios       
         .post('http://localhost:3333/smurfs', addSmurfData)
         .then(res => {
             dispatch({ type: ADD_SMURF_SUCCESS, payload: res.data });
         })
         .catch(error => {
-            dispatch({ type: ADD_SMURF_FAILURE, payload: error.response })
+            dispatch({ type: ADD_SMURF_FAILURE, payload: error.response });
         })
 };

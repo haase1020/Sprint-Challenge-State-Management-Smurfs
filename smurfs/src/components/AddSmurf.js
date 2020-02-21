@@ -13,8 +13,8 @@ const AddSmurf = (props) => {
         newSmurf({...smurf, [event.target.name]: event.target.value });
     };
 
-    const handleSubmit = ecvent => {
-        // event.preventDefault();
+    const handleSubmit = event => {
+        event.preventDefault();
         const addSmurfData = {
             name: smurf.name,
             age: smurf.age,
@@ -25,7 +25,7 @@ const AddSmurf = (props) => {
 
     return (
         <div className="add-smf-form">
-            <form onSbumti={handleSubmit}>
+            <form onSubmit={handleSubmit}>
             <input
             className='input'
             type='text'
