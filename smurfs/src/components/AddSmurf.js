@@ -14,7 +14,7 @@ const AddSmurf = (props) => {
     };
 
     const handleSubmit = ecvent => {
-        event.preventDefault();
+        // event.preventDefault();
         const addSmurfData = {
             name: smurf.name,
             age: smurf.age,
